@@ -94,6 +94,14 @@
             if(isNaN(sum)){
                 sum=0;
             }
+            // 空值显示为0
+            if(sum<0){
+                sum=0
+            }
+            //大于100时显示为100
+            if(sum>100){
+                sum=100
+            }
             document.getElementById('sum').textContent =  sum;
         }
 
