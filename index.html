@@ -88,10 +88,10 @@
             var group4Value = document.querySelector('input[name="group4"]:checked') ? document.querySelector('input[name="group4"]:checked').value : 0;
 
             // 计算总和
-            var sum = parseFloat(group1Value) + parseFloat(group2Value)+parseFloat(group3Value) + parseFloat(group4Value)+numberValue;
+            var sum = parseFloat(group1Value) + parseFloat(group2Value)+parseFloat(group3Value) + parseFloat(group4Value)+numberValue*0.1;
 
             // 在页面上显示总和
-            if(isNaN(sum)){
+            if(isNaN(sum) ){
                 sum=0;
             }
             // 空值显示为0
@@ -102,20 +102,22 @@
             if(sum>100){
                 sum=100
             }
+
             document.getElementById('sum').textContent =  sum;
         }
 
         // 当页面加载完成后执行init函数
         window.onload = init;
     </script>
+    <h1 style="background-color: rgb(25,118,210);margin-bottom: 50px;padding: 4px;font-size: 25px;font-weight: bold",>
+        <text style="margin-left: 60px">PORTLARS Caculator V1.0</text>
+    </h1>
 </head>
 
 
 
 <body  >
-<h1 style="background-color: rgb(25,118,210);margin-bottom: 50px;padding: 4px;font-size: 25px;font-weight: bold",>
-    <text style="margin-left: 60px">PORTLARS Caculator V1.0</text>
-</h1>
+
 
 
 <p STYLE="margin-bottom: 20px;">
@@ -140,7 +142,7 @@
     <input type="radio"  name="group1" value="10">Negative
 
 </input1-margin>
-    <input type="radio" name="group1" value="20">positive
+    <input type="radio" name="group1" value="20">Positive
 
 </form>
 
@@ -165,7 +167,7 @@
 
     </form1>
     <br>
-    <input1-margin>
+    <input1-margin style="margin-right: 55px">
         <input type="radio"  name="group3" value="30">No
 
     </input1-margin>
@@ -178,7 +180,7 @@
 
     </form1>
     <br>
-    <input1-margin>
+    <input1-margin style="margin-right: 55px">
         <input type="radio"  name="group4" value="30">No
 
     </input1-margin>
@@ -314,6 +316,13 @@
 
 </style>
 <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* 这行代码可以隐藏水平滚动条 */
+    }
+
     hr {
 
         margin-right: 7.5%;
