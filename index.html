@@ -19,10 +19,9 @@
             var values = Array.from(document.querySelectorAll('.input-field')).map(input => parseFloat(input.value) || 0);
             var weights = [0.7, 1.76, 0.13, -0.01, 1.37];
             var sum = values.reduce((acc, val, idx) => acc + val * weights[idx], 0);
-            var result = sum > 50.9279 ? 'CP grade II ': 'CP grade I ';
+            var result = sum > 50.9279 ? 'CP grade II ' : 'CP grade I ';
             document.getElementById('sum').textContent = result;
         }
-
 
         window.onload = init;
     </script>
@@ -45,19 +44,12 @@
         }
 
         form {
-            padding: 30px;
+            padding: 10px;
             margin-left: 7.5%;
             margin-right: 7.5%;
             background-color: rgb(245, 245, 245);
             margin-bottom: 20px;
-            height: 60px;
             border-radius: 10px;
-        }
-
-        form1 {
-            margin-left: 10px;
-            margin-bottom: 10px;
-            background-color: rgb(245, 245, 245);
         }
 
         html,
@@ -74,7 +66,7 @@
         }
 
         input {
-            width: 100%;
+            width: calc(100% - 20px);
             background-color: rgb(232, 232, 232);
             border-radius: 5px;
             border: grey;
@@ -82,31 +74,26 @@
             outline: none;
             padding: 10px;
             box-sizing: border-box;
+            margin-top: 10px;
         }
 
-        table {
-            border-collapse: collapse;
-            border-radius: 5px;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid lightgrey;
+        label {
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
 <h1 style="background-color: rgb(25, 118, 210); margin-bottom: 30px; padding: 4px; font-size: 25px; font-weight: bold">
-    <text style="margin-left: 5%">CATS Calculator V1.0</text>
+    <span style="margin-left: 5%">CATS Calculator V1.0</span>
 </h1>
 <p>CATS (Chronic Pancreatitis CT Severity Model) is an automatic, economical, and user-friendly prediction model that accurately predicts the severity of chronic pancreatitis (CP). It reflects the morphological features of the pancreas and predicts exocrine function, as well as the short- and medium-term prognosis for patients with CP. </p>
 <p>The interactive CATS is easy to use. Simply input the five CT characteristics shown below, and the severity of CP will be presented. </p>
-<p style="margin-bottom: 10px">CATS does not  collect or store any individual data.</p>
+<p style="margin-bottom: 10px">CATS does not collect or store any individual data.</p>
 <hr style="background-color: cornflowerblue; border: none; height: 2px; margin-left: 6.5%;">
 <form>
-    <label for="input1">The maximum size of total cxalcifications:</label>
+    <label for="input1">The maximum size of total calcifications:</label>
     <input type="number" id="input1" class="input-field">
 </form>
 <form>
@@ -114,9 +101,9 @@
     <input type="number" id="input2" class="input-field">
 </form>
 <form>
-    <label for="input3">The maximum dimeter of pancreatic duct:</label>
+    <label for="input3">The maximum diameter of pancreatic duct:</label>
     <input type="number" id="input3" class="input-field">
-</form>,
+</form>
 <form>
     <label for="input4">Pancreatic net volume:</label>
     <input type="number" id="input4" class="input-field">
@@ -127,13 +114,13 @@
 </form>
 <hr style="background-color: cornflowerblue; border: none; height: 2px; margin-left: 7.5%;">
 <p style="margin-bottom: 5px">Result</p>
-<!--<p style="color: grey; font-size: x-small">Risk of Major LARS (%)</p>-->
 <p id="sum"></p>
 <hr style="border-style: dashed; color: lightgrey; margin-left: 7.5%;">
 <hr style="background-color: cornflowerblue; border: none; height: 2px; margin-left: 7.5%;">
 <p style="margin-bottom: 20px">Note:
-    <br>CP grade I (M-ANNHEIM A and recurrent acute pancreatitis) and  CP grade II (M-ANNHEIM B-E)</p>
+    <br>CP grade I (M-ANNHEIM A and recurrent acute pancreatitis) and CP grade II (M-ANNHEIM B-E)</p>
 <hr style="background-color: cornflowerblue;border: none;/* 移除默认边框 */height: 2px;/* 设置高度 */margin-left: 7.5%;">
-<img src="logo.png" style="margin-left: 6.5%;width:80%" >
+<img src="logo.png" style="margin-left: 6.5%;width:80%">
 </body>
+
 </html>
