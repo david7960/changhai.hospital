@@ -21,11 +21,14 @@
                 }
                 return parseFloat(input.value) || 0;
             });
+
             if (allFilled) {
                 var weights = [0.7, 1.76, 0.13, -0.01, 1.37];
                 var sum = values.reduce((acc, val, idx) => acc + val * weights[idx], 0);
                 var result = sum > 50.9279 ? 'CP grade II ' : 'CP grade I ';
                 document.getElementById('sum').textContent = result;
+            } else {
+                document.getElementById('sum').textContent = '';
             }
         }
 
